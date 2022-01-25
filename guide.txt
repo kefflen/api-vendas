@@ -3,7 +3,8 @@
     > npm add ts-node-dev @types/node tsconfig-paths -D
     > npx tsc --init --rootDir src --outDir build --esModuleInterop --resolveJsonModule --lib es6 --module commonjs --allowjs true --noImplicitAny true
     > npm add eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
-
+    > npm add prettier -D
+    > npm add eslint-config-prettier@6.15.0 eslint-plugin-prettier@3.2.0 -D
 /package.json
     "scripts": {
         "dev": tsnd --inspect --transpile-only --ignore-watch node_modules src/server.ts
