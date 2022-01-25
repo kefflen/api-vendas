@@ -2,10 +2,30 @@
     -depedencias
     > npm add ts-node-dev @types/node tsconfig-paths -D
     > npx tsc --init --rootDir src --outDir build --esModuleInterop --resolveJsonModule --lib es6 --module commonjs --allowjs true --noImplicitAny true
+    > npm add eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
 
 /package.json
     "scripts": {
         "dev": tsnd --inspect --transpile-only --ignore-watch node_modules src/server.ts
     }
 
- 
+/.eslintrc
+  {
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ]
+}
+
+/.eslintignore
+  node_modules
+  dist
+  build
+  /*.js
+

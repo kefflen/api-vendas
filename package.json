@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsnd src/server.ts"
+    "start": "tsnd src/server.ts",
+    "lint": "eslint . --ext .ts"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,9 @@
   "homepage": "https://github.com/kefflen/api-vendas#readme",
   "devDependencies": {
     "@types/node": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
+    "eslint": "^8.7.0",
     "ts-node-dev": "^1.1.8",
     "tsconfig-paths": "^3.12.0"
   }
