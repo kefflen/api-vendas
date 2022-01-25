@@ -1,0 +1,11 @@
+-Iniciando o projeto
+    -depedencias
+    > npm add ts-node-dev @types/node tsconfig-paths -D
+    > npx tsc --init --rootDir src --outDir build --esModuleInterop --resolveJsonModule --lib es6 --module commonjs --allowjs true --noImplicitAny true
+
+/package.json
+    "scripts": {
+        "dev": tsnd --inspect --transpile-only --ignore-watch node_modules src/server.ts
+    }
+
+ 
