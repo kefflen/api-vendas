@@ -4,6 +4,7 @@ import cors from 'cors'
 
 import routes from './routes'
 import AppError from '@shared/errors/AppError'
+import '@shared/typeorm'
 
 const PORT = 4000
 const app = express()
