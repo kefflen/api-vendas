@@ -11,7 +11,6 @@ export default class ProductsController {
     const listProducts = new ListProductService()
 
     const products = await listProducts.execute()
-
     return response.json(products)
   }
 
