@@ -1,5 +1,4 @@
 import productsRouter from '@modules/products/routes/products.routes'
-import { assert } from 'console'
 import { Router } from 'express'
 
 const routes = Router()
