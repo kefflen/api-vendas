@@ -4,6 +4,7 @@ import { getCustomRepository } from 'typeorm'
 import User from '../typeorm/entities/user'
 import UsersRepository from '../typeorm/repositories/UserRepository'
 import { sign } from 'jsonwebtoken'
+import authConfig from '@config/auth'
 
 interface IRequest {
   email: string
@@ -29,11 +30,9 @@ class CreateSessionsService {
     if (!passwordConfirmed) {
       throw new AppError('Incorrect email/password combination.', 401)
     }
-    const authsecrets = process.env.AUTHSECRETS
-    if (!authsecrets) throw new Error("Authsecrets key on enviroment variables not founded")
     
-    const token = sign({}, authsecrets, {subject: user.id, expiresIn: '1d'})
-    return { user, token}
+    const token = sign({}, authConfig.jwt.secret, {subject: user.id, expiresIn: authConfig.jwt.expiresIn})
+    return { user, token }
   }
 }
 
