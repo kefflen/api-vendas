@@ -19,7 +19,6 @@ export default function isAuthenticated(
   if (!authHeader) {
     throw new AppError('JWT Token is missing.')
   }
-  // Bearer sdlkfjsldkfjlsjfffdklfjdflksjflkjfdlk3405905
   const [, token] = authHeader.split(' ')
 
   try {
