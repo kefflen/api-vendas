@@ -7,9 +7,11 @@ import 'express-async-errors'
 import routes from './routes'
 import AppError from '@shared/errors/AppError'
 import '@shared/typeorm'
+import uploadConfig from '../../config/upload'
 
 const PORT = 4000
 const app = express()
+app.use('/files', express.static(uploadConfig.directory))
 app.use(cors())
 app.use(express.json())
 app.use(routes)
