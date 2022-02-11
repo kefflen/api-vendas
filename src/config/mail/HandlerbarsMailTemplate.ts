@@ -1,10 +1,10 @@
 import handlebars from 'handlebars'
 
-interface ITemplateVariable {
+export interface ITemplateVariable {
   [key: string]: string | number
 }
 
-interface IParseMailTemplate {
+export interface IParseMailTemplate {
   template: string
   variables: ITemplateVariable
 }
